@@ -69,7 +69,8 @@ a2 = [ones(size(sigmoid(z2), 1), 1) sigmoid(z2)]; % add 1
 z3 = a2 * Theta2';
 a3 = sigmoid(z3); % H_theta(x)
 
-y_recoded = eye(num_labels)(y,:);
+temp = eye(num_labels);
+y_recoded =temp(y,:);
 
 regularator = (sum(sum(Theta1(:,2:end).^2)) + sum(sum(Theta2(:,2:end).^2))) * (lambda/(2*m));
 
